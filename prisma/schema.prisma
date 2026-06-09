@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model AdAnalysis {
+  id                   String   @id @default(cuid())
+  brand                String
+  product              String
+  rawAdContent         String
+  targetAudience       String
+  coreMessage          String
+  creativeHook         String
+  elementA             String
+  elementB             String
+  bridge               String
+  bridgeType           String
+  emotion              String
+  narrativePattern     String
+  visualPattern        String
+  copywritingPattern   String
+  whyItFeelsCreative   String
+  reusableFormula      String
+  fullAnalysisJson     Json
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+}
+
